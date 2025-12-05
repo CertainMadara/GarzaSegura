@@ -1,0 +1,5 @@
+cat > data.json <<'JSON'
+{
+  "registros": []
+}
+JSON
