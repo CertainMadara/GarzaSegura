@@ -1,0 +1,38 @@
+name: Actualizar JSON
+
+on:
+  workflow_dispatch:
+    inputs:
+      nuevo_registro:
+        description: "Dato a guardar"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  update-json:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          persist-credentials: true
+
+      - name: Instalar jq
+        run: sudo apt-get update && sudo apt-get install -y jq
+
+      - name: Actualizar data.json
+        run: |
+          registro="${{ github.event.inputs.nuevo_registro }}"
+          echo "Registro a añadir: $registro"
+          jq --arg r "$registro" '.registros += [$r]' data.json > tmp.json
+          mv tmp.json data.json
+
+      - name: Commit & push
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add data.json
+          git commit -m "Añadido registro: $registro" || echo "No hay cambios para commitear"
+          git push
