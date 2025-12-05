@@ -1,0 +1,22 @@
+/* About Section */
+.about-section {
+    padding: 5rem 0;
+    background-color: #fff;
+}
+
+.about-section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+
+/* Contact Section */
+.contact-section {
+    padding: 5rem 0;
+    background-color: #fff;
+}
+
+.contact-section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}

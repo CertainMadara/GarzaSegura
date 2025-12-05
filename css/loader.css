@@ -1,0 +1,56 @@
+/* From Uiverse.io by myshy13 */ 
+.loader {
+  border: 5px solid transparent;
+  border-bottom: 5px solid black;
+  padding: 1em;
+  border-radius: 50%;
+  rotate: 180deg;
+
+  animation-name: loader;
+  animation-duration: 0.9s;
+  animation-timing-function: cubic-bezier(0.17, 0.67, 0.83, 0.67);
+  animation-iteration-count: infinite;
+  animation-delay: 0.1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes loader {
+  0% {
+    rotate: 180deg;
+  }
+  100% {
+    rotate: -180deg;
+  }
+}
+
+@keyframes circle {
+  0% {
+    scale: 1;
+  }
+  25% {
+    scale: 1.1;
+  }
+  50% {
+    scale: 2.5;
+  }
+  75% {
+    scale: 1.1;
+  }
+  100% {
+    scale: 1;
+  }
+}
+
+.circle {
+  border-radius: 0.25em;
+  width: 1em;
+  height: 1em;
+  background-color: black;
+
+  animation-name: circle;
+  animation-duration: 0.5s;
+  animation-timing-function: cubic-bezier(0.17, 0.67, 0.83, 0.67);
+  animation-iteration-count: infinite;
+  animation-delay: 0.1s;
+  animation-fill-mode: forwards;
+}
