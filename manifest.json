@@ -1,7 +1,7 @@
 {
   "name": "Tienda de Muebles",
   "short_name": "Tienda",
-  "start_url": "./html/index.html",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#8B4513",
