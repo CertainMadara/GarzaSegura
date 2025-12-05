@@ -16,8 +16,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        with:
-          persist-credentials: true
 
       - name: Instalar jq
         run: sudo apt-get update && sudo apt-get install -y jq
@@ -33,6 +31,8 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
+
           git add BD/data.json
-          git commit -m "Añadido registro: $registro" || echo "No hay cambios para commitear"
+          git commit -m "Añadido registro: ${{ github.event.inputs.nuevo_registro }}" || echo "No hay cambios para commitear"
+
           git push
